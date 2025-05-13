@@ -1,6 +1,7 @@
-import "./App.css";
-import Book from "./Book";
 
+import "./App.css";
+import Book from "./components/Book";
+import booksInfo from "./components/BooksData";
 function App() {
   //  const bookName = "John Text"
   // const author = "Hafiz"
@@ -28,14 +29,18 @@ function App() {
   return (
     <div className="App">
       {/* <Book {books.map(book =>book.author}/> */}
-      {books.map((book) => (
+      {booksInfo.map((book, index) => (
         <Book
-          key={book.id}
+          key={index}
           title={book.title}
           author={book.author}
           description={book.description}
+          pages={book.pages}
+          image = {book.image}
         />
       ))}
+
+
     </div>
   );
 }
